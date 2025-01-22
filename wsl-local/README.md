@@ -11,11 +11,23 @@ Ubuntu 20.04
 
 ### Docker image pull
 
-```$ docker pull haileynam/darknet```
+```$ docker pull haileynam/darknet:one-image```
+or
+```$ docker pull haileynam/darknet:multiple-images```
 
-move run_darknet.sh to target local directory
+### Docker image build
+
+``` $ docker image build -t haileynam/darknet:one-image . ```
+or
+``` $ docker image build -t haileynam/darknet:multiple-images . ```
+
+make sure run_darknet_one_image.sh or run_darknet_multiple_images.sh is in same directory with Dockerfile.
+
+
+### Input image location
+
+``` {LOCAL WORKING DIR}/input_images ``` 
 
 ### Docker container run 
 
-``` $ docker run -it -e FILE={INPUT FILE (url or image)} -v /mnt/c/Users/user/{LOCAL WORKING DIR}:/darknet/output haileynam/darknet``` 
-
+``` $ docker run -it -e FILE={INPUT FILE (url or image)} -v /mnt/c/Users/user/{LOCAL WORKING DIR}:/darknet/output haileynam/darknet:{tag}``` 
